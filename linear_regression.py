@@ -86,3 +86,13 @@ plt.xlabel('Actual Median House Value')
 plt.ylabel('Predicted Median House Value')
 plt.grid(True)
 plt.show()
+
+# Step 13: Display the coefficients of the linear regression model
+coefficients = mymodel.named_steps['linear_regression'].coef_
+intercept = mymodel.named_steps['linear_regression'].intercept_
+print("Coefficients of the Linear Regression Model:")
+for feature, coef in zip(X.columns, coefficients):
+    print(f"{feature}: {coef:.4f}")
+print(f"Intercept: {intercept:.4f}")
+
+
